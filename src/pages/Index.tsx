@@ -1,4 +1,6 @@
 import { Mountain, MapPin, Calendar, Clock, Users, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-trail.jpg";
 
 const races = [
@@ -71,6 +73,11 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-6 text-primary-foreground/80 text-sm font-body animate-fade-up" style={{ animationDelay: "0.45s" }}>
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Marcillac-Vallon</span>
             <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km</span>
+          </div>
+          <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.6s" }}>
+            <Button size="lg" className="font-display text-lg tracking-wider px-10 py-6" asChild>
+              <Link to="/inscription">S'INSCRIRE</Link>
+            </Button>
           </div>
         </div>
         <a href="#courses" className="absolute bottom-8 z-10 animate-bounce">
