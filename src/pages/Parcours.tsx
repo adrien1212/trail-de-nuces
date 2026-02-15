@@ -10,7 +10,7 @@ import NavBar from "@/components/NavBar";
 const parcours = [
   {
     name: "La Grande Nuçoise",
-    distance: "16 km",
+    distance: "17 km",
     elevation: "450 D+",
     level: "Confirmé",
     description:
@@ -32,7 +32,7 @@ const parcours = [
   },
   {
     name: "La Petite Nuçoise",
-    distance: "6 km",
+    distance: "5 km",
     elevation: "80 D+",
     level: "Tous niveaux",
     description:

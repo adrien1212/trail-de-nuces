@@ -8,7 +8,7 @@ import NavBar from "@/components/NavBar";
 const races = [
   {
     name: "Le Grande Nuçoise",
-    distance: "16 km",
+    distance: "17 km",
     elevation: "450 D+",
     level: "Confirmé",
     description:
@@ -28,7 +28,7 @@ const races = [
   },
   {
     name: "La Petite Nuçoise",
-    distance: "6 km",
+    distance: "5 km",
     elevation: "80 D+",
     level: "Tous niveaux",
     description:
@@ -136,6 +136,56 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <section id="contact" className="py-24 px-4 bg-white">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-5xl md:text-7xl text-foreground mb-16">
+            NOUS CONTACTER
+          </h2>
+
+          <div className="space-y-10">
+            {[
+              {
+                title: "Email",
+                content: (
+                  <a
+                    href="mailto:comitedesfetesnuces12330@gmail.com"
+                    className="text-primary underline hover:text-primary/80"
+                  >
+                    comitedesfetesnuces12330@gmail.com
+                  </a>
+                ),
+              },
+              {
+                title: "Instagram",
+                content: (
+                  <a
+                    href="https://instagram.com/comitedenuces"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline hover:text-primary/80"
+                  >
+                    @comitedenuces
+                  </a>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.title}>
+                <h3 className="font-display text-2xl text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="font-body text-lg text-muted-foreground">
+                  {item.content}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+
 
       {/* Footer */}
       <Footer />
