@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import map17km from "@/assets/map-17km.jpg";
 import map10km from "@/assets/map-10km.jpg";
 import map5km from "@/assets/map-5km.jpg";
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
 
 const parcours = [
   {
-    name: "Le Grand Parcours",
-    distance: "17 km",
-    elevation: "500 D+",
+    name: "La Grande Nuçoise",
+    distance: "16 km",
+    elevation: "450 D+",
     level: "Confirmé",
     description:
       "Le défi pour les traileurs confirmés. Un parcours exigeant à travers les collines et vignobles de Marcillac avec des passages techniques et de beaux panoramas sur la vallée.",
@@ -18,9 +20,9 @@ const parcours = [
     color: "bg-primary",
   },
   {
-    name: "Le Parcours Découverte",
+    name: "La Nuçoise",
     distance: "10 km",
-    elevation: "300 D+",
+    elevation: "230 D+",
     level: "Intermédiaire",
     description:
       "Un parcours intermédiaire idéal pour découvrir le trail en douceur. Des chemins variés entre vignes et forêts avec de beaux points de vue sur le vallon.",
@@ -29,9 +31,9 @@ const parcours = [
     color: "bg-secondary",
   },
   {
-    name: "La Rando Trail",
-    distance: "5 km",
-    elevation: "200 D+",
+    name: "La Petite Nuçoise",
+    distance: "6 km",
+    elevation: "80 D+",
     level: "Tous niveaux",
     description:
       "Accessible à tous, en famille ou entre amis. Un premier pas dans le monde du trail sur des sentiers faciles autour de Marcillac-Vallon.",
@@ -45,21 +47,7 @@ const Parcours = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto flex items-center justify-between py-3 px-4">
-          <Link to="/" className="flex items-center gap-2">
-            <Mountain className="h-6 w-6 text-primary" />
-            <span className="font-display text-2xl tracking-wider text-foreground">
-              TRAIL DE MARCILLAC
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-8 font-body text-sm font-medium text-muted-foreground">
-            <Link to="/" className="hover:text-foreground transition-colors">Accueil</Link>
-            <Link to="/parcours" className="text-foreground">Les parcours</Link>
-            <Link to="/inscription" className="hover:text-foreground transition-colors">Inscription</Link>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       <main className="pt-32 pb-24 px-4">
         <div className="container mx-auto max-w-5xl">
@@ -67,7 +55,7 @@ const Parcours = () => {
             LES PARCOURS
           </h1>
           <p className="text-muted-foreground text-center text-lg mb-16 font-body max-w-2xl mx-auto">
-            Découvrez les tracés des 3 parcours du Trail de Marcillac-Vallon. Téléchargez les fichiers GPX pour repérer les itinéraires.
+            Découvrez les tracés des 3 parcours du Trail de Nuces Téléchargez les fichiers GPX pour repérer les itinéraires.
           </p>
 
           <div className="space-y-16">
@@ -86,9 +74,6 @@ const Parcours = () => {
                     />
                   </div>
                   <div className="p-8 flex flex-col justify-center">
-                    <span className="text-xs font-body font-semibold uppercase tracking-widest text-muted-foreground">
-                      {p.level}
-                    </span>
                     <h2 className="font-display text-4xl text-foreground mt-2 mb-1">
                       {p.name}
                     </h2>
@@ -98,9 +83,6 @@ const Parcours = () => {
                         {p.elevation}
                       </span>
                     </div>
-                    <p className="text-muted-foreground font-body leading-relaxed text-sm mb-6">
-                      {p.description}
-                    </p>
                     <div>
                       <Button variant="outline" asChild>
                         <a href={p.gpxUrl} download>
@@ -118,17 +100,7 @@ const Parcours = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-10 px-4 border-t border-border bg-card">
-        <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2">
-            <Mountain className="h-5 w-5 text-primary" />
-            <span className="font-display text-lg text-foreground">TRAIL DE MARCILLAC</span>
-          </Link>
-          <p className="text-muted-foreground font-body text-sm">
-            © 2026 Trail de Marcillac-Vallon — Tous droits réservés
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
