@@ -62,10 +62,10 @@ const Index = () => {
             NUCES
           </h1>
           <p className="font-body text-primary-foreground/90 text-xl md:text-2xl font-light mb-8 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            3 parcours au cœur de la commune
+            3 parcours au cœur de la commune de Valady
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-primary-foreground/80 text-sm font-body animate-fade-up" style={{ animationDelay: "0.45s" }}>
-            <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Nuces</span>
+            <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Nuces 12330</span>
             <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km</span>
           </div>
           <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.6s" }}>

@@ -19,7 +19,7 @@ const Inscription = () => {
             Les inscriptions au Trail de Marcillac-Vallon sont ouvertes ! Choisissez votre distance parmi les 3 parcours proposés : 17 km, 10 km ou 5 km.
           </p>
           <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
-            L'inscription se fait via notre plateforme partenaire.
+            L'inscription se fait via notre plateforme partenaire (1€).
           </p>
           <p className="text-muted-foreground font-body text-base leading-relaxed mb-10">
             Pour toute question, n'hésitez pas à nous contacter <br />
