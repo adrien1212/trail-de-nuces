@@ -10,9 +10,6 @@ const races = [
     name: "Le Grande Nuçoise",
     distance: "17 km",
     elevation: "450 D+",
-    level: "Confirmé",
-    description:
-      "Le défi pour les traileurs confirmés. Un parcours exigeant à travers les collines et vignobles de Marcillac avec des passages techniques et de beaux panoramas sur la vallée.",
     gpxUrl: "#",
     color: "bg-primary",
   },
@@ -20,9 +17,6 @@ const races = [
     name: "La Nuçoise",
     distance: "10 km",
     elevation: "230 D+",
-    level: "Intermédiaire",
-    description:
-      "Un parcours intermédiaire idéal pour découvrir le trail en douceur. Des chemins variés entre vignes et forêts avec de beaux points de vue sur le vallon.",
     gpxUrl: "#",
     color: "bg-secondary",
   },
@@ -30,9 +24,6 @@ const races = [
     name: "La Petite Nuçoise",
     distance: "5 km",
     elevation: "80 D+",
-    level: "Tous niveaux",
-    description:
-      "Accessible à tous, en famille ou entre amis. Un premier pas dans le monde du trail sur des sentiers faciles autour de Marcillac-Vallon.",
     gpxUrl: "#",
     color: "bg-accent",
   },

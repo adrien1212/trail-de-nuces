@@ -6,11 +6,11 @@ import NavBar from "@/components/NavBar";
 
 const Contact = () => {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background flex flex-col">
             {/* Navigation */}
             <NavBar />
 
-            <main className="pt-32 pb-24 px-4">
+            <main className="pt-32 pb-24 px-4 flex-1">
                 <div className="container mx-auto max-w-2xl text-center">
                     {/* Title */}
                     <h1 className="font-display text-5xl md:text-7xl text-foreground mb-8">

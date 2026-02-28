@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const navLinks = [
   { to: "/parcours", label: "Les parcours" },
-  { to: "/randonnee", label: "Randonnée" },
+  //{ to: "/randonnee", label: "Randonnée" },
   { to: "/inscription", label: "Inscription" },
   { to: "/contact", label: "Contact" },
 ];

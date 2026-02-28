@@ -27,7 +27,7 @@ const Randonnee = () => {
             </div>
             <div className="p-8">
               <h2 className="font-display text-3xl md:text-4xl text-foreground mb-1">
-                La Balade des Vignes
+                La Balade du Causse
               </h2>
               <div className="flex items-center gap-4 mb-6">
                 <span className="font-display text-4xl md:text-5xl text-primary">12 km</span>
@@ -55,16 +55,16 @@ const Randonnee = () => {
 
               <div className="space-y-4 font-body text-muted-foreground">
                 <p>
-                  Cette randonnée vous emmène à la découverte des paysages vallonnés de la commune de Nuces. 
-                  Le parcours serpente à travers les vignobles de Marcillac, longe des chemins ombragés en sous-bois 
+                  Cette randonnée vous emmène à la découverte des paysages vallonnés de la commune de Nuces.
+                  Le parcours serpente à travers les vignobles de Marcillac, longe des chemins ombragés en sous-bois
                   et offre de magnifiques points de vue sur la vallée du Lot.
                 </p>
                 <p>
-                  Le sentier est balisé et accessible à tous les marcheurs, y compris les familles avec enfants. 
+                  Le sentier est balisé et accessible à tous les marcheurs, y compris les familles avec enfants.
                   Prévoyez de bonnes chaussures de marche, de l'eau et une casquette en cas de soleil.
                 </p>
                 <p>
-                  Le ravitaillement sera assuré à mi-parcours avec eau et fruits secs. 
+                  Le ravitaillement sera assuré à mi-parcours avec eau et fruits secs.
                   L'arrivée se fait au village où un verre de l'amitié vous attend !
                 </p>
               </div>

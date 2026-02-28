@@ -6,17 +6,17 @@ import NavBar from "@/components/NavBar";
 
 const Inscription = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Navigation */}
       <NavBar />
 
-      <main className="pt-32 pb-24 px-4">
+      <main className="pt-32 pb-24 px-4 flex-1">
         <div className="container mx-auto max-w-2xl text-center">
           <h1 className="font-display text-5xl md:text-7xl text-foreground mb-8">
             INSCRIPTION
           </h1>
           <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
-            Les inscriptions au Trail de Marcillac-Vallon sont ouvertes ! Choisissez votre distance parmi les 3 parcours proposés : 17 km, 10 km ou 5 km.
+            Les inscriptions au Trail de Nuces sont <strong>exclusivement en ligne</strong> ! Choisissez votre distance parmi les 3 parcours proposés : 17 km, 10 km ou 5 km.
           </p>
           <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
             L'inscription se fait via notre plateforme partenaire (1€).
