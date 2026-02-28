@@ -4,42 +4,48 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import map17km from "@/assets/map-17km.jpg";
 import map10km from "@/assets/map-10km.jpg";
 import map5km from "@/assets/map-5km.jpg";
+import altiture17km from "@/assets/altitude-17km.png";
+import altiture10km from "@/assets/altitude-10km.png";
+import altiture5km from "@/assets/altitude-5km.png";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-
+import InscriptionBtn from "@/components/InscriptionBtn";
 const parcours = [
   {
     id: "17km",
     name: "La Grande Nuçoise",
     distance: "17 km",
-    elevation: "450 D+",
-    level: "Confirmé",
+    elevation: "500 D+",
     description:
       "Le défi pour les traileurs confirmés. Un parcours exigeant à travers les collines et vignobles de Marcillac avec des passages techniques et de beaux panoramas sur la vallée.",
     map: map17km,
-    gpxUrl: "#",
+    altitude: altiture17km,
+    gpxUrl: "17.gpx",
+    price: 15
   },
   {
     id: "10km",
     name: "La Nuçoise",
     distance: "10 km",
-    elevation: "230 D+",
-    level: "Intermédiaire",
+    elevation: "270 D+",
     description:
       "Un parcours intermédiaire idéal pour découvrir le trail en douceur. Des chemins variés entre vignes et forêts avec de beaux points de vue sur le vallon.",
     map: map10km,
-    gpxUrl: "#",
+    altitude: altiture10km,
+    gpxUrl: "10.gpx",
+    price: 12
   },
   {
     id: "5km",
     name: "La Petite Nuçoise",
     distance: "5 km",
-    elevation: "80 D+",
-    level: "Tous niveaux",
+    elevation: "100 D+",
     description:
       "Accessible à tous, en famille ou entre amis. Un premier pas dans le monde du trail sur des sentiers faciles autour de Marcillac-Vallon.",
     map: map5km,
-    gpxUrl: "#",
+    altitude: altiture5km,
+    gpxUrl: "5.gpx",
+    price: 10
   },
 ];
 
@@ -76,14 +82,27 @@ const Parcours = () => {
                       className="w-full h-auto object-contain"
                     />
                   </div>
+                  <div className="w-full">
+                    <img
+                      src={p.altitude}
+                      alt={`Altitude du parcours ${p.name}`}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                   <div className="p-8">
-                    <h2 className="font-display text-3xl md:text-4xl text-foreground mb-1">
-                      {p.name}
-                    </h2>
+                    <div className="flex items-start justify-between mb-1">
+                      <h2 className="font-display text-3xl md:text-4xl text-foreground">
+                        {p.name}
+                      </h2>
+                      <span className="font-display text-3xl md:text-3xl text-foreground">
+                        {p.price}€
+                      </span>
+                    </div>
+
                     <div className="flex items-center gap-4 mb-4">
                       <span className="font-display text-4xl md:text-5xl text-primary">{p.distance}</span>
-                      <span className="text-muted-foreground font-body text-sm border-l border-border pl-4">
-                        {p.elevation} · {p.level}
+                      <span className="text-muted-foreground font-body border-l border-border pl-4">
+                        {p.elevation}
                       </span>
                     </div>
                     <p className="text-muted-foreground font-body mb-6">{p.description}</p>
@@ -93,6 +112,9 @@ const Parcours = () => {
                         Télécharger le GPX
                       </a>
                     </Button>
+                  </div>
+                  <div className="flex justify-center py-6">
+                    <InscriptionBtn />
                   </div>
                 </div>
               </TabsContent>

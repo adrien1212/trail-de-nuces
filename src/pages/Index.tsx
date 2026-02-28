@@ -4,26 +4,27 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-trail.jpg";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import InscriptionBtn from "@/components/InscriptionBtn";
 
 const races = [
   {
     name: "Le Grande Nuçoise",
     distance: "17 km",
-    elevation: "450 D+",
+    elevation: "500 D+",
     gpxUrl: "#",
     color: "bg-primary",
   },
   {
     name: "La Nuçoise",
     distance: "10 km",
-    elevation: "230 D+",
+    elevation: "250 D+",
     gpxUrl: "#",
     color: "bg-secondary",
   },
   {
     name: "La Petite Nuçoise",
     distance: "5 km",
-    elevation: "80 D+",
+    elevation: "100 D+",
     gpxUrl: "#",
     color: "bg-accent",
   },
@@ -60,9 +61,7 @@ const Index = () => {
             <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km</span>
           </div>
           <div className="mt-10 animate-fade-up" style={{ animationDelay: "0.6s" }}>
-            <Button size="lg" className="font-display text-lg tracking-wider px-10 py-6" asChild>
-              <Link to="/inscription">S'INSCRIRE</Link>
-            </Button>
+            <InscriptionBtn />
           </div>
         </div>
         <a href="#courses" className="absolute bottom-8 z-10 animate-bounce">

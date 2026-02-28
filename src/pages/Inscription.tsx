@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import InscriptionBtn from "@/components/InscriptionBtn";
 
 const Inscription = () => {
   return (
@@ -25,11 +26,7 @@ const Inscription = () => {
             Pour toute question, n'hésitez pas à nous contacter <br />
             <strong><a href="mailto:comitedesfetesnuces12330@gmail.com">comitedesfetesnuces12330@gmail.com</a></strong>
           </p>
-          <Button size="lg" className="font-display text-lg tracking-wider px-10 py-6" asChild>
-            <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-              S'INSCRIRE <ExternalLink className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
+          <InscriptionBtn />
         </div>
       </main>
 
