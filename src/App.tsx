@@ -9,6 +9,7 @@ import Parcours from "./pages/Parcours";
 import Randonnee from "./pages/Randonnee";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
+import PendingInscription from "./pages/PendingInscription";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/randonnee" element={<Randonnee />} />
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/pending" element={<PendingInscription />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
