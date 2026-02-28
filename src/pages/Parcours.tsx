@@ -105,13 +105,13 @@ const Parcours = () => {
                         {p.elevation}
                       </span>
                     </div>
-                    <p className="text-muted-foreground font-body mb-6">{p.description}</p>
-                    <Button variant="outline" asChild>
+                    {/* <p className="text-muted-foreground font-body mb-6">{p.description}</p> */}
+                    {<Button variant="outline" asChild>
                       <a href={p.gpxUrl} download>
                         <Download className="h-4 w-4 mr-2" />
                         Télécharger le GPX
                       </a>
-                    </Button>
+                    </Button>}
                   </div>
                   <div className="flex justify-center py-6">
                     <InscriptionBtn />
