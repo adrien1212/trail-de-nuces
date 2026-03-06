@@ -25,6 +25,9 @@ const Inscription = () => {
           <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
             L'inscription se fait via notre plateforme partenaire (1€).
           </p>
+          <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
+            Restauration sur place possible, à réserver lors de l’inscription
+          </p>
           <p className="text-muted-foreground font-body text-base leading-relaxed mb-10">
             Pour toute question, n'hésitez pas à nous contacter <br />
             <strong><a href="mailto:comitedesfetesnuces12330@gmail.com">comitedesfetesnuces12330@gmail.com</a></strong>
