@@ -21,7 +21,8 @@ const parcours = [
     map: map17km,
     altitude: altiture17km,
     gpxUrl: "17.gpx",
-    price: 15
+    price: 15,
+    eventtarifId: 50319,
   },
   {
     id: "10km",
@@ -33,7 +34,8 @@ const parcours = [
     map: map10km,
     altitude: altiture10km,
     gpxUrl: "10.gpx",
-    price: 12
+    price: 12,
+    eventtarifId: 50318,
   },
   {
     id: "5km",
@@ -45,7 +47,8 @@ const parcours = [
     map: map5km,
     altitude: altiture5km,
     gpxUrl: "5.gpx",
-    price: 10
+    price: 10,
+    eventtarifId: 50317,
   },
 ];
 
@@ -120,6 +123,7 @@ const Parcours = () => {
                     <p>Restauration sur place possible, à réserver lors de l’inscription</p>
                   </div>
                 </div>
+
               </TabsContent>
             ))}
           </Tabs>
