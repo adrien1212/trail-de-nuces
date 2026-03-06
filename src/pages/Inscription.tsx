@@ -14,8 +14,11 @@ const Inscription = () => {
       <main className="pt-32 pb-24 px-4 flex-1">
         <div className="container mx-auto max-w-2xl text-center">
           <h1 className="font-display text-5xl md:text-7xl text-foreground mb-8">
-            INSCRIPTION DIMANCHE 26 AVRIL
+            INSCRIPTION
           </h1>
+
+          <h2 className="font-display text-5xl md:text-4xl mb-2">Trail de Nuces le dimanche 26 AVRIL</h2><br></br>
+
           <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
             Les inscriptions au Trail de Nuces sont <strong>exclusivement en ligne</strong> ! Choisissez votre distance parmi les 3 parcours proposés : 17 km, 10 km ou 5 km.
           </p>
