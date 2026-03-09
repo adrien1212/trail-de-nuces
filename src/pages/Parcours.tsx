@@ -66,7 +66,10 @@ const Parcours = () => {
             Découvrez les tracés des 3 parcours du Trail de Nuces. Téléchargez les fichiers GPX pour repérer les itinéraires.
           </p>
 
-          <Tabs defaultValue="17km" className="w-full">
+          <Tabs
+            defaultValue="17km"
+            className="w-full"
+          >
             <TabsList className="w-full grid grid-cols-3 mb-8 h-auto">
               {parcours.map((p) => (
                 <TabsTrigger key={p.id} value={p.id} className="font-display text-sm md:text-base py-3">
@@ -122,6 +125,10 @@ const Parcours = () => {
                   <div className="flex justify-center py-6 text-1xl md:text-2xl">
                     <p>Restauration sur place possible, à réserver lors de l’inscription</p>
                   </div>
+                  <div
+                    className="eventtarif-jetcode"
+                    data-eventtarif-id={p.eventtarifId}
+                  />
                 </div>
 
               </TabsContent>
