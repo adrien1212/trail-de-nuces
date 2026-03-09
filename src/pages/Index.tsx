@@ -80,23 +80,29 @@ const Index = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {races.map((race, i) => (
-              <div
+              <a
                 key={race.name}
-                className="group relative bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                href={`/parcours`}
+                className="group relative block bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className={`${race.color} h-2`} />
-                <div className="p-8">
-                  <h3 className="font-display text-3xl text-foreground mt-2 mb-1">
-                    {race.name}
-                  </h3>
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="font-display text-5xl text-primary">{race.distance}</span>
-                    <span className="text-muted-foreground font-body text-sm border-l border-border pl-4">
-                      {race.elevation}
-                    </span>
+                <div
+                  key={race.name}
+                  className="group relative bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div className={`${race.color} h-2`} />
+                  <div className="p-8">
+                    <h3 className="font-display text-3xl text-foreground mt-2 mb-1">
+                      {race.name}
+                    </h3>
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="font-display text-5xl text-primary">{race.distance}</span>
+                      <span className="text-muted-foreground font-body text-sm border-l border-border pl-4">
+                        {race.elevation}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
