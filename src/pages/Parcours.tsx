@@ -13,7 +13,7 @@ import InscriptionBtn from "@/components/InscriptionBtn";
 const parcours = [
   {
     id: "17km",
-    name: "La Grande Nuçoise",
+    name: "La Grande Nuçoise (10h)",
     distance: "17 km",
     elevation: "500 D+",
     description:
@@ -26,7 +26,7 @@ const parcours = [
   },
   {
     id: "10km",
-    name: "La Nuçoise",
+    name: "La Nuçoise (10h30)",
     distance: "10 km",
     elevation: "270 D+",
     description:
@@ -39,7 +39,7 @@ const parcours = [
   },
   {
     id: "5km",
-    name: "La Petite Nuçoise",
+    name: "La Petite Nuçoise (11h)",
     distance: "5 km",
     elevation: "100 D+",
     description:

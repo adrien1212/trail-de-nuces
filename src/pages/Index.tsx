@@ -8,21 +8,21 @@ import InscriptionBtn from "@/components/InscriptionBtn";
 
 const races = [
   {
-    name: "Le Grande Nuçoise",
+    name: "Le Grande Nuçoise (10h)",
     distance: "17 km",
     elevation: "500 D+",
     gpxUrl: "#",
     color: "bg-primary",
   },
   {
-    name: "La Nuçoise",
+    name: "La Nuçoise (10h30)",
     distance: "10 km",
     elevation: "250 D+",
     gpxUrl: "#",
     color: "bg-secondary",
   },
   {
-    name: "La Petite Nuçoise",
+    name: "La Petite Nuçoise (11h)",
     distance: "5 km",
     elevation: "100 D+",
     gpxUrl: "#",
