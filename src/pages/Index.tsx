@@ -58,7 +58,7 @@ const Index = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-primary-foreground/80 text-sm font-body animate-fade-up">
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Nuces 12330</span>
-            <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km</span>
+            <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km / +rando</span>
           </div>
           <div className="mt-10 animate-fade-up">
             <InscriptionBtn />
