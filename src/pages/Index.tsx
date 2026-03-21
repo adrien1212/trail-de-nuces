@@ -17,7 +17,7 @@ const races = [
   {
     name: "La Nuçoise (10h30)",
     distance: "10 km",
-    elevation: "250 D+",
+    elevation: "300 D+",
     gpxUrl: "#",
     color: "bg-secondary",
   },
