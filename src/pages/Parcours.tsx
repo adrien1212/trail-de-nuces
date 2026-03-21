@@ -28,7 +28,7 @@ const parcours = [
     id: "10km",
     name: "La Nuçoise (10h30)",
     distance: "10 km",
-    elevation: "270 D+",
+    elevation: "300 D+",
     description:
       "Un parcours intermédiaire idéal pour découvrir le trail en douceur. Des chemins variés entre vignes et forêts avec de beaux points de vue sur le vallon.",
     map: map10km,
