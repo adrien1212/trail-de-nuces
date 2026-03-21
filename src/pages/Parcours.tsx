@@ -125,10 +125,6 @@ const Parcours = () => {
                   <div className="flex justify-center py-6 text-1xl md:text-2xl">
                     <p>Restauration sur place possible, à réserver lors de l’inscription</p>
                   </div>
-                  <div
-                    className="eventtarif-jetcode"
-                    data-eventtarif-id={p.eventtarifId}
-                  />
                 </div>
 
               </TabsContent>
