@@ -22,7 +22,7 @@ const Randonnee = () => {
           </h2>
 
           <p className="text-muted-foreground text-lg mb-6 font-body max-w-2xl">
-            L’inscription se fait sur place à partir de <strong>9h30</strong>, pour un départ prévu à <strong>10h00</strong>.
+            L’inscription se fait sur place à partir de <strong>9h30</strong> jusqu'à <strong>10h00</strong>.
           </p>
 
           <ul className="text-muted-foreground text-lg font-body max-w-2xl  list-disc pl-6">
