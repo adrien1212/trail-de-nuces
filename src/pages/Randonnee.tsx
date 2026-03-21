@@ -1,5 +1,5 @@
 import { MapPin, Mountain, Clock, Users } from "lucide-react";
-import mapRando from "@/assets/map-rando.jpg";
+import mapRando from "@/assets/map-rando.png";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
@@ -14,8 +14,33 @@ const Randonnee = () => {
             RANDONNÉE
           </h1>
           <p className="text-muted-foreground text-center text-lg mb-12 font-body max-w-2xl mx-auto">
-            En parallèle du trail, profitez d'une randonnée accessible à tous pour découvrir les paysages de Nuces et ses alentours.
+            En parallèle du trail, profitez d'une randonnée accessible à tous pour découvrir les paysages de la commune
           </p>
+
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+            Inscription sur place
+          </h2>
+
+          <p className="text-muted-foreground text-lg mb-6 font-body max-w-2xl">
+            L’inscription se fait sur place à partir de <strong>9h30</strong>, pour un départ prévu à <strong>10h00</strong>.
+          </p>
+
+          <ul className="text-muted-foreground text-lg font-body max-w-2xl  list-disc pl-6">
+            <li>
+              <strong>Horaire d’inscription :</strong> à partir de 9h30 jusqu'à 10h
+            </li>
+            <li>
+              <strong>Restauration sur place :</strong> réservation obligatoire par mail <a
+                href="mailto:comitedesfetesnuces12330@gmail.com"
+                className="underline hover:opacity-80">comitedesfetesnuces12330@gmail.com
+              </a>
+            </li>
+            <li>
+              <strong>Tarifs repas :</strong> 15 € par adulte et 10 € par enfant
+            </li>
+          </ul>
+
+          <br></br><br></br>
 
           <div className="bg-card rounded-lg border border-border overflow-hidden">
             <div className="w-full">
@@ -26,21 +51,22 @@ const Randonnee = () => {
               />
             </div>
             <div className="p-8">
-              <h2 className="font-display text-3xl md:text-4xl text-foreground mb-1">
-                La Balade du Causse
-              </h2>
-              <div className="flex items-center gap-4 mb-6">
-                <span className="font-display text-4xl md:text-5xl text-primary">12 km</span>
-                <span className="text-muted-foreground font-body text-sm border-l border-border pl-4">
-                  350 D+ · Tous niveaux
+              <div className="flex items-start justify-between mb-1">
+                <h2 className="font-display text-3xl md:text-4xl text-foreground">
+                  La balade du Causse
+                </h2>
+                <span className="font-display text-3xl md:text-3xl text-foreground">
+                  5€
                 </span>
+              </div>
+              <div className="flex items-center gap-4 mb-6">
+                <span className="font-display text-4xl md:text-5xl text-primary">9 km</span>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {[
-                  { icon: MapPin, title: "Départ", desc: "Place de Nuces, Valady" },
-                  { icon: Clock, title: "Durée estimée", desc: "Environ 3h à 3h30" },
-                  { icon: Mountain, title: "Dénivelé", desc: "350 m de dénivelé positif" },
+                  { icon: MapPin, title: "Départ", desc: "Place de l'Eglise, Nuces" },
+                  { icon: Clock, title: "Durée estimée", desc: "Environ 2h à 3h30" },
                   { icon: Users, title: "Public", desc: "Familles, marcheurs, tous niveaux" },
                 ].map((info) => (
                   <div key={info.title} className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
@@ -54,19 +80,7 @@ const Randonnee = () => {
               </div>
 
               <div className="space-y-4 font-body text-muted-foreground">
-                <p>
-                  Cette randonnée vous emmène à la découverte des paysages vallonnés de la commune de Nuces.
-                  Le parcours serpente à travers les vignobles de Marcillac, longe des chemins ombragés en sous-bois
-                  et offre de magnifiques points de vue sur la vallée du Lot.
-                </p>
-                <p>
-                  Le sentier est balisé et accessible à tous les marcheurs, y compris les familles avec enfants.
-                  Prévoyez de bonnes chaussures de marche, de l'eau et une casquette en cas de soleil.
-                </p>
-                <p>
-                  Le ravitaillement sera assuré à mi-parcours avec eau et fruits secs.
-                  L'arrivée se fait au village où un verre de l'amitié vous attend !
-                </p>
+
               </div>
             </div>
           </div>

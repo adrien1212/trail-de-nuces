@@ -1,9 +1,9 @@
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import map17km from "@/assets/map-17km.jpg";
-import map10km from "@/assets/map-10km.jpg";
-import map5km from "@/assets/map-5km.jpg";
+import map17km from "@/assets/map-17km.png";
+import map10km from "@/assets/map-10km.png";
+import map5km from "@/assets/map-5km.png";
 import altiture17km from "@/assets/altitude-17km.png";
 import altiture10km from "@/assets/altitude-10km.png";
 import altiture5km from "@/assets/altitude-5km.png";
@@ -66,7 +66,10 @@ const Parcours = () => {
             Découvrez les tracés des 3 parcours du Trail de Nuces. Téléchargez les fichiers GPX pour repérer les itinéraires.
           </p>
 
-          <Tabs defaultValue="17km" className="w-full">
+          <Tabs
+            defaultValue="17km"
+            className="w-full"
+          >
             <TabsList className="w-full grid grid-cols-3 mb-8 h-auto">
               {parcours.map((p) => (
                 <TabsTrigger key={p.id} value={p.id} className="font-display text-sm md:text-base py-3">
@@ -122,6 +125,10 @@ const Parcours = () => {
                   <div className="flex justify-center py-6 text-1xl md:text-2xl">
                     <p>Restauration sur place possible, à réserver lors de l’inscription</p>
                   </div>
+                  <div
+                    className="eventtarif-jetcode"
+                    data-eventtarif-id={p.eventtarifId}
+                  />
                 </div>
 
               </TabsContent>
