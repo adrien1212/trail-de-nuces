@@ -27,10 +27,7 @@ const Randonnee = () => {
 
           <ul className="text-muted-foreground text-lg font-body max-w-2xl  list-disc pl-6">
             <li>
-              <strong>Horaire d’inscription :</strong> à partir de 9h30
-            </li>
-            <li>
-              <strong>Heure de départ :</strong> 10h00
+              <strong>Horaire d’inscription :</strong> à partir de 9h30 jusqu'à 10h
             </li>
             <li>
               <strong>Restauration sur place :</strong> réservation obligatoire par mail <a

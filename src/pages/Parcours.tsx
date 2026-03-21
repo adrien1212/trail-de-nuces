@@ -1,9 +1,9 @@
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import map17km from "@/assets/map-17km.jpg";
-import map10km from "@/assets/map-10km.jpg";
-import map5km from "@/assets/map-5km.jpg";
+import map17km from "@/assets/map-17km.png";
+import map10km from "@/assets/map-10km.png";
+import map5km from "@/assets/map-5km.png";
 import altiture17km from "@/assets/altitude-17km.png";
 import altiture10km from "@/assets/altitude-10km.png";
 import altiture5km from "@/assets/altitude-5km.png";
