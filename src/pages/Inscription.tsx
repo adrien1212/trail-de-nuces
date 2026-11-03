@@ -17,7 +17,7 @@ const Inscription = () => {
             INSCRIPTION
           </h1>
 
-          <h2 className="font-display text-5xl md:text-4xl mb-2">Trail de Nuces le dimanche 26 AVRIL</h2><br></br>
+          <h2 className="font-display text-5xl md:text-4xl mb-2">Trail de Nuces le dimanche 25 AVRIL 2027</h2><br></br>
 
           <p className="text-muted-foreground font-body text-lg leading-relaxed mb-4">
             Les inscriptions au Trail de Nuces sont <strong>exclusivement en ligne</strong> ! Choisissez votre distance parmi les 3 parcours proposés : 17 km, 10 km ou 5 km.

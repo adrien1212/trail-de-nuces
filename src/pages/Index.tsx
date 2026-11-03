@@ -46,7 +46,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
         <div className="relative z-10 text-center px-4 max-w-4xl">
           <p className="font-body text-primary-foreground/80 text-lg md:text-xl tracking-widest uppercase mb-4 animate-fade-up">
-            Dimanche 26 Avril 2026
+            Dimanche 25 Avril 2027
           </p>
           <h1 className="font-display text-6xl md:text-9xl text-primary-foreground leading-none mb-6 animate-fade-up" >
             TRAIL DE
@@ -166,7 +166,7 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 gap-8">
             {[
               { icon: MapPin, title: "Lieu de départ", desc: "Nuces, VALADY (12330)" },
-              { icon: Calendar, title: "Date", desc: "Dimanche 26 avril 2026" },
+              { icon: Calendar, title: "Date", desc: "Dimanche 25 avril 2027" },
               { icon: Clock, title: "Horaires", desc: "Retrait des dossards dès 8h30" },
               { icon: Users, title: "Ouvert à tous", desc: "Licenciés et non-licenciés" },
             ].map((info) => (
