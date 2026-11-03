@@ -37,44 +37,76 @@ const Index = () => {
       <NavBar />
 
       {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center overflow-hidden">
         <img
           src={heroImage}
           alt="Sentiers de Nuces"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
-        <div className="relative z-10 text-center px-4 max-w-4xl">
-          <p className="font-body text-primary-foreground/80 text-lg md:text-xl tracking-widest uppercase mb-4 animate-fade-up">
-            Dimanche 25 Avril 2027
-          </p>
-          <h1 className="font-display text-6xl md:text-9xl text-primary-foreground leading-none mb-6 animate-fade-up" >
-            TRAIL DE
-            <br />
-            NUCES
-          </h1>
-          <p className="font-body text-primary-foreground/90 text-xl md:text-2xl font-light mb-8 animate-fade-up">
-            3 parcours au cœur de la commune de Valady
-          </p>
-          <div className="flex flex-wrap justify-center gap-6 text-primary-foreground/80 text-sm font-body animate-fade-up">
-            <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Nuces 12330</span>
-            <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km / +rando</span>
-          </div>
-          <div className="mt-10 animate-fade-up">
-            <InscriptionBtn />
-            <div className="mt-4">
-              <Button asChild variant="outline" size="lg" className="bg-background/80 backdrop-blur-sm">
-                <Link to="/resultats">Voir les résultats</Link>
-              </Button>
+        <div className="relative z-10 container mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-12 items-start">
+          {/* Colonne gauche : titre, date, boutons */}
+          <div className="text-center lg:text-left">
+            <h1 className="font-display text-6xl md:text-9xl text-primary-foreground leading-none mb-4 animate-fade-up" >
+              TRAIL DE
+              <br />
+              NUCES
+            </h1>
+            <p className="font-body text-primary-foreground/80 text-lg md:text-xl tracking-widest uppercase mb-6 animate-fade-up">
+              Dimanche 25 Avril 2027
+            </p>
+            <p className="font-body text-primary-foreground/90 text-xl md:text-2xl font-light mb-8 animate-fade-up">
+              3 parcours au cœur de la commune de Valady
+            </p>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-primary-foreground/80 text-sm font-body animate-fade-up">
+              <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Nuces 12330</span>
+              <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km / +rando</span>
             </div>
-            <div className="mt-4">
-              <Button asChild variant="outline" size="lg" className="bg-background/80 backdrop-blur-sm">
-                <Link to="https://photos.traildenuces.fr">Voir les photos</Link>
-              </Button>
+            <div className="mt-10 inline-flex flex-col gap-4 animate-fade-up">
+              <InscriptionBtn className="w-full" />
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <Button asChild variant="outline" size="lg" className="bg-background/80 backdrop-blur-sm">
+                  <Link to="/resultats">Voir les résultats</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="bg-background/80 backdrop-blur-sm">
+                  <Link to="https://photos.traildenuces.fr">Voir les photos</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Colonne droite : les parcours */}
+          <div className="hidden lg:flex justify-end animate-fade-up">
+            <div className="w-full max-w-md rounded-2xl border border-primary-foreground/20 bg-foreground/30 backdrop-blur-md p-6 text-primary-foreground shadow-2xl">
+              <h2 className="font-display text-3xl mb-4">LES PARCOURS</h2>
+              <ul className="divide-y divide-primary-foreground/15">
+                {[
+                  ...races.map((race) => ({
+                    name: race.name.replace(/\s*\(.*\)$/, ""),
+                    distance: race.distance,
+                    elevation: race.elevation,
+                    color: race.color,
+                    href: "/parcours",
+                  })),
+                  { name: "Randonnée", distance: "9 km", elevation: "200 D+", color: "bg-cyan-500", href: "/randonnee" },
+                ].map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.href}
+                      className="flex items-center gap-4 py-4 rounded-md transition-colors hover:bg-primary-foreground/10 -mx-2 px-2"
+                    >
+                      <span className={`${item.color} h-10 w-1.5 rounded-full`} />
+                      <span className="flex-1 font-body text-lg font-medium">{item.name}</span>
+                      <span className="font-display text-2xl">{item.distance}</span>
+                      <span className="w-16 text-right font-body text-sm text-primary-foreground/70">{item.elevation}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-        <a href="#courses" className="absolute bottom-8 z-10 animate-bounce">
+        <a href="#courses" className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
           <ChevronDown className="h-8 w-8 text-primary-foreground/60" />
         </a>
       </section>
