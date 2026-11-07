@@ -20,7 +20,7 @@ const Contact = () => {
                     {/* Intro */}
                     <p className="text-muted-foreground font-body text-lg leading-relaxed mb-10">
                         Une question sur le Trail de Nuces ?
-                        N’hésitez pas à nous contacter via les moyens ci-dessous.
+                        N’hésitez pas à nous contacter via les moyens ci-dessous
                     </p>
 
                     {/* Contact Info */}
