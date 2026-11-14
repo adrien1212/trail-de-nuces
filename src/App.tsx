@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import PendingInscription from "./pages/PendingInscription";
 import Resultats from "./pages/Resultats";
+import Partenaires from "./pages/Partenaires";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/pending" element={<PendingInscription />} />
           <Route path="/resultats" element={<Resultats />} />
+          <Route path="/partenaires" element={<Partenaires />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

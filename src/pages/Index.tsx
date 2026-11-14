@@ -1,342 +1,250 @@
-import { Mountain, MapPin, Calendar, Clock, Users, ChevronDown } from "lucide-react";
+import { MapPin, Calendar, UtensilsCrossed } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-trail.jpg";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import InscriptionBtn from "@/components/InscriptionBtn";
 
-const races = [
+const courses = [
   {
-    name: "Le Grande Nuçoise (10h)",
+    tag: "Trail long",
     distance: "17 km",
-    elevation: "500 D+",
-    gpxUrl: "#",
-    color: "bg-primary",
+    elevation: "+500 m",
+    depart: "10 h 00",
+    price: "15 €",
+    featured: true,
+    href: "/parcours",
+    btnLabel: "S'inscrire au 17 km",
   },
   {
-    name: "La Nuçoise (10h30)",
+    tag: "Trail court",
     distance: "10 km",
-    elevation: "300 D+",
-    gpxUrl: "#",
-    color: "bg-secondary",
+    elevation: "+300 m",
+    depart: "10 h 30",
+    price: "12 €",
+    featured: false,
+    href: "/parcours",
+    btnLabel: "S'inscrire au 10 km",
   },
   {
-    name: "La Petite Nuçoise (11h)",
+    tag: "Découverte",
     distance: "5 km",
-    elevation: "100 D+",
-    gpxUrl: "#",
-    color: "bg-accent",
+    elevation: "+100 m",
+    depart: "11 h 00",
+    price: "10 €",
+    featured: false,
+    href: "/parcours",
+    btnLabel: "S'inscrire au 5 km",
+  },
+  {
+    tag: "Randonnée",
+    distance: "9 km",
+    elevation: "Marche, sans chrono",
+    depart: "9 h 30",
+    price: "5 €",
+    featured: false,
+    isRando: true,
+    href: "/randonnee",
+    btnLabel: "S'inscrire à la rando",
   },
 ];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
       <NavBar />
 
       {/* Hero */}
-      <section className="relative h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
         <img
           src={heroImage}
-          alt="Sentiers de Nuces"
-          className="absolute inset-0 w-full h-full object-cover"
+          alt="Sentiers de Nuces — coureurs sur les chemins du vallon"
+          className="absolute inset-0 w-full h-full object-cover object-bottom hero-pastel"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-background" />
-        <div className="relative z-10 container mx-auto max-w-7xl px-4 grid lg:grid-cols-2 gap-12 items-start">
-          {/* Colonne gauche : titre, date, boutons */}
-          <div className="text-center lg:text-left">
-            <h1 className="font-display text-6xl md:text-9xl text-primary-foreground leading-none mb-4 animate-fade-up" >
-              TRAIL DE
-              <br />
-              NUCES
-            </h1>
-            <p className="font-body text-primary-foreground/80 text-lg md:text-xl tracking-widest uppercase mb-6 animate-fade-up">
-              Dimanche 25 Avril 2027
-            </p>
-            <p className="font-body text-primary-foreground/90 text-xl md:text-2xl font-light mb-8 animate-fade-up">
-              3 parcours au cœur de la commune de Valady
-            </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-primary-foreground/80 text-sm font-body animate-fade-up">
-              <span className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Nuces 12330</span>
-              <span className="flex items-center gap-2"><Mountain className="h-4 w-4" /> 5 / 10 / 17 km / +rando</span>
-            </div>
-            <div className="mt-10 inline-flex flex-col gap-4 animate-fade-up">
-              <InscriptionBtn className="w-full" />
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                <Button asChild variant="outline" size="lg" className="bg-background/80 backdrop-blur-sm">
-                  <Link to="/resultats">Voir les résultats</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="bg-background/80 backdrop-blur-sm">
-                  <Link to="https://photos.traildenuces.fr">Voir les photos</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
 
-          {/* Colonne droite : les parcours */}
-          <div className="hidden lg:flex justify-end animate-fade-up">
-            <div className="w-full max-w-md rounded-2xl border border-primary-foreground/20 bg-foreground/30 backdrop-blur-md p-6 text-primary-foreground shadow-2xl">
-              <h2 className="font-display text-3xl mb-4">LES PARCOURS</h2>
-              <ul className="divide-y divide-primary-foreground/15">
-                {[
-                  ...races.map((race) => ({
-                    name: race.name.replace(/\s*\(.*\)$/, ""),
-                    distance: race.distance,
-                    elevation: race.elevation,
-                    color: race.color,
-                    href: "/parcours",
-                  })),
-                  { name: "Randonnée", distance: "9 km", elevation: "200 D+", color: "bg-cyan-500", href: "/randonnee" },
-                ].map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      to={item.href}
-                      className="flex items-center gap-4 py-4 rounded-md transition-colors hover:bg-primary-foreground/10 -mx-2 px-2"
-                    >
-                      <span className={`${item.color} h-10 w-1.5 rounded-full`} />
-                      <span className="flex-1 font-body text-lg font-medium">{item.name}</span>
-                      <span className="font-display text-2xl">{item.distance}</span>
-                      <span className="w-16 text-right font-body text-sm text-primary-foreground/70">{item.elevation}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <a href="#courses" className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-          <ChevronDown className="h-8 w-8 text-primary-foreground/60" />
-        </a>
-      </section>
-
-      {/* Races Section */}
-      <section id="courses" className="py-24 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="font-display text-5xl md:text-7xl text-foreground text-center mb-4">
-            LES COURSES
-          </h2>
-          <p className="text-muted-foreground text-center text-lg mb-16 font-body max-w-2xl mx-auto">
-            Trois distances pour tous les niveaux, à travers les sentiers de la commune
+        <div className="relative flex flex-col items-center gap-5 px-6 pb-16 pt-48 text-center animate-hero-enter">
+          <h1
+            className="text-[clamp(44px,6vw,80px)] leading-[1.05] font-bold tracking-[-0.02em] text-foreground"
+            style={{ textShadow: "0 1px 24px hsl(41 52% 92% / 0.6)" }}
+          >
+            Trail de Nuces 2027
+          </h1>
+          <p
+            className="max-w-[560px] text-xl leading-7 text-foreground/70"
+            style={{ textShadow: "0 1px 12px hsl(41 52% 92% / 0.5)" }}
+          >
+            Dimanche 25 avril 2027 · Nuces, Aveyron.
+            <br className="hidden sm:block" />
+            Trois courses et une rando sur les chemins du vallon.
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {races.map((race, i) => (
-              <a
-                key={race.name}
-                href={`/parcours`}
-                className="group relative block bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div
-                  key={race.name}
-                  className="group relative bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className={`${race.color} h-2`} />
-                  <div className="p-8">
-                    <h3 className="font-display text-3xl text-foreground mt-2 mb-1">
-                      {race.name}
-                    </h3>
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="font-display text-5xl text-primary">{race.distance}</span>
-                      <span className="text-muted-foreground font-body text-sm border-l border-border pl-4">
-                        {race.elevation}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))}
+          <div className="flex flex-wrap justify-center gap-3 mt-2">
+            <Link
+              to="/inscription"
+              className="inline-flex items-center min-h-[48px] px-7 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+            >
+              S'inscrire
+            </Link>
+            <a
+              href="#courses"
+              className="inline-flex items-center min-h-[48px] px-7 bg-white/90 text-primary font-semibold rounded-lg border border-border backdrop-blur-sm hover:bg-white active:bg-white/80 transition-all duration-200"
+            >
+              Voir les courses
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="courses" className="py-24 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="font-display text-5xl md:text-7xl text-foreground text-center mb-4">
-            LA RANDONNEE 
+      {/* Courses */}
+      <section id="courses" className="max-w-[1184px] mx-auto px-6 sm:px-8 py-20">
+        <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <h2 className="text-[32px] leading-[38px] font-bold text-foreground">
+            Les courses
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-                <div
-                  key="rando"
-                  className="group relative"
-                ></div>
-
-              <a
-                key="rando"
-                href={`/randonnee`}
-                className="group relative block bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div
-                  key="rando"
-                  className="group relative bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <div className={`${"bg-cyan-500"} h-2`} />
-                  <div className="p-8">
-                    <h3 className="font-display text-3xl text-foreground mt-2 mb-1">
-                      Randonnée (9h30)
-                    </h3>
-                    <span className="text-muted-foreground font-body">Inscription sur place</span>
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="font-display text-5xl text-primary">9km</span>
-                      <span className="text-muted-foreground font-body text-sm border-l border-border pl-4">
-                        200D+
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-          </div>
+          <p className="max-w-[420px] text-muted-foreground">
+            Choisis ta distance. Départ et arrivée au village de Nuces.
+          </p>
         </div>
-      </section>
 
-      {/* Infos Section */}
-      <section id="infos" className="py-24 px-4 bg-card">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="font-display text-5xl md:text-7xl text-foreground text-center mb-16">
-            INFOS PRATIQUES
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-8">
-            {[
-              { icon: MapPin, title: "Lieu de départ", desc: "Nuces, VALADY (12330)" },
-              { icon: Calendar, title: "Date", desc: "Dimanche 25 avril 2027" },
-              { icon: Clock, title: "Horaires", desc: "Retrait des dossards dès 8h30" },
-              { icon: Users, title: "Ouvert à tous", desc: "Licenciés et non-licenciés" },
-            ].map((info) => (
-              <div key={info.title} className="flex items-start gap-4 p-6 rounded-lg bg-background border border-border">
-                <info.icon className="h-6 w-6 text-primary shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-display text-xl text-foreground">{info.title}</h3>
-                  <p className="text-muted-foreground font-body text-sm mt-1">{info.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-24 px-4 bg-card">
-        <div className="container mx-auto max-w-5xl">
-          <h2 className="text-center font-display text-5xl md:text-7xl text-foreground mb-12">
-            RESTAURATION SUR PLACE
-          </h2>
-
-          {/* Tarifs */}
-          <div className="text-center mb-16">
-            <p className="font-body text-xl md:text-2xl text-foreground">
-              Tarifs repas
-            </p>
-            <p className="font-body text-lg text-muted-foreground">
-              15 € / adulte · 10 € / enfant
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            
-            {/* Colonne Trail */}
-            <div className="flex flex-col items-center text-center space-y-6">
-              <h3 className="font-display text-3xl text-foreground">
-                Trail
-              </h3>
-              <p className="font-body text-lg text-muted-foreground">
-                Réservation lors de l'inscription en ligne
-              </p>
-
-              <br></br><br></br>
-
-              {/* Boutons */}
-              <div className="mt-auto flex flex-col gap-4 w-full max-w-xs">
-                <a
-                  href="/parcours"
-                  className="w-full px-6 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary/90 transition"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {courses.map((course) => (
+            <article
+              key={course.distance}
+              className={`flex flex-col gap-6 p-6 rounded-lg transition-all duration-200 hover:-translate-y-1 ${
+                course.featured
+                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/15 hover:shadow-xl hover:shadow-primary/25"
+                  : course.isRando
+                  ? "bg-accent hover:shadow-lg hover:shadow-foreground/5"
+                  : "bg-card border border-border hover:shadow-lg hover:shadow-foreground/5"
+              }`}
+            >
+              <div className="flex flex-col items-start gap-4">
+                <span
+                  className={`px-3 py-1 text-[11px] font-semibold tracking-[0.06em] uppercase rounded-full ${
+                    course.featured
+                      ? "bg-secondary text-primary"
+                      : course.isRando
+                      ? "bg-white text-primary"
+                      : "bg-secondary text-primary"
+                  }`}
                 >
-                  Voir les parcours
-                </a>
-              </div>
-            </div>
-
-            {/* Colonne Randonnée */}
-            <div className="flex flex-col items-center text-center space-y-6">
-              <h3 className="font-display text-3xl text-foreground">
-                Randonnée
-              </h3>
-              <p className="font-body text-lg text-muted-foreground">
-                Réservation par email :
-              </p>
-              <a
-                href="mailto:comitedesfetesnuces12330@gmail.com"
-                className="text-primary underline hover:text-primary/80"
-              >
-                comitedesfetesnuces12330@gmail.com
-              </a>
-
-              {/* Boutons */}
-              <div className="mt-auto flex flex-col gap-4 w-full max-w-xs">
-                <a
-                  href="/randonnee"
-                  className="w-full px-6 py-3 rounded-xl border border-primary text-primary font-medium hover:bg-primary/10 transition"
-                >
-                  Voir la randonnée
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mb-16">
-            NOUS CONTACTER
-          </h2>
-
-          <div className="space-y-10">
-            {[
-              {
-                title: "Email",
-                content: (
-                  <a
-                    href="mailto:comitedesfetesnuces12330@gmail.com"
-                    className="text-primary underline hover:text-primary/80"
-                  >
-                    comitedesfetesnuces12330@gmail.com
-                  </a>
-                ),
-              },
-              {
-                title: "Instagram",
-                content: (
-                  <a
-                    href="https://instagram.com/comitedenuces"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary underline hover:text-primary/80"
-                  >
-                    @comitedenuces
-                  </a>
-                ),
-              },
-            ].map((item) => (
-              <div key={item.title}>
-                <h3 className="font-display text-2xl text-foreground mb-2">
-                  {item.title}
+                  {course.tag}
+                </span>
+                <h3 className="text-[44px] sm:text-[56px] leading-none font-bold tracking-tight">
+                  {course.distance}
                 </h3>
-                <p className="font-body text-lg text-muted-foreground">
-                  {item.content}
-                </p>
               </div>
-            ))}
+
+              <dl
+                className={`flex flex-col border-t ${
+                  course.featured ? "border-primary-foreground/20" : "border-border"
+                }`}
+              >
+                {[
+                  { label: course.isRando ? "Format" : "Dénivelé", value: course.elevation },
+                  { label: "Départ", value: course.depart },
+                  { label: "Tarif", value: course.price },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className={`flex justify-between gap-4 py-3 border-b ${
+                      course.featured ? "border-primary-foreground/20" : "border-border"
+                    }`}
+                  >
+                    <dt
+                      className={`text-[11px] font-semibold tracking-[0.06em] uppercase leading-6 ${
+                        course.featured ? "text-primary-foreground/70" : "text-muted-foreground"
+                      }`}
+                    >
+                      {item.label}
+                    </dt>
+                    <dd className="font-semibold">{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <Link
+                to={course.href}
+                className={`inline-flex items-center justify-center min-h-[48px] mt-auto px-4 font-semibold rounded-lg transition-all duration-200 active:scale-[0.98] ${
+                  course.featured
+                    ? "bg-white text-primary hover:bg-white/90 shadow-sm"
+                    : course.isRando
+                    ? "bg-white text-primary border border-border hover:bg-background shadow-sm"
+                    : "bg-primary text-primary-foreground hover:shadow-md hover:shadow-primary/20"
+                }`}
+              >
+                {course.btnLabel}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Infos pratiques */}
+      <section id="infos" className="max-w-[1184px] mx-auto px-6 sm:px-8 pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-t border-b border-border">
+          {[
+            {
+              icon: Calendar,
+              label: "Date",
+              value: "Dimanche 25 avril 2027",
+              detail: "Retrait des dossards dès 8h30.",
+            },
+            {
+              icon: MapPin,
+              label: "Lieu",
+              value: "Nuces, Valady",
+              detail: "Aveyron (12), Occitanie.",
+            },
+            {
+              icon: UtensilsCrossed,
+              label: "Repas",
+              value: "Sur place",
+              detail: "Sur pré-commande à l'inscription.",
+            },
+          ].map((info) => (
+            <div key={info.label} className="flex flex-col gap-2">
+              <info.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
+              <p className="text-[11px] font-semibold tracking-[0.06em] uppercase text-muted-foreground mt-1">
+                {info.label}
+              </p>
+              <p className="text-2xl font-semibold text-foreground leading-snug">{info.value}</p>
+              <p className="text-muted-foreground leading-relaxed">{info.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="max-w-[1184px] mx-auto px-6 sm:px-8 py-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
+          <div className="flex flex-col gap-3 max-w-[640px]">
+            <h2 className="text-[clamp(28px,4vw,48px)] leading-[1.1] font-bold">
+              Prends le départ à Nuces
+            </h2>
+            <p className="text-lg leading-7 text-primary-foreground/70">
+              17 km · 10 km · 5 km · Rando 9 km. Inscription en ligne.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              to="/inscription"
+              className="inline-flex items-center min-h-[48px] px-7 bg-white text-primary font-semibold rounded-lg shadow-lg shadow-black/10 hover:shadow-xl hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+            >
+              S'inscrire
+            </Link>
+            <Link
+              to="/contact"
+              className="inline-flex items-center min-h-[48px] px-7 text-primary-foreground font-semibold rounded-lg border border-primary-foreground/50 hover:bg-primary-foreground/10 active:bg-primary-foreground/5 transition-all duration-200"
+            >
+              Devenir bénévole
+            </Link>
           </div>
         </div>
       </section>
 
-
-
-
-
-
-
-      {/* Footer */}
       <Footer />
     </div>
   );

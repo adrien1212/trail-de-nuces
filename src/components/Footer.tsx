@@ -1,18 +1,17 @@
-import { Link, Mountain } from "lucide-react";
-
+import { Link } from "react-router-dom";
 
 export default function Footer() {
-    return (
-        <footer className="py-10 px-4 border-t border-border bg-card">
-            <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-2">
-                    <Mountain className="h-5 w-5 text-primary" />
-                    <span className="font-display text-lg text-foreground">TRAIL DE NUCES</span>
-                </div>
-                <p className="text-muted-foreground font-body text-sm">
-                    © 2026 Trail de Nuces — Tous droits réservés
-                </p>
-            </div>
-        </footer>
-    )
+  return (
+    <footer className="max-w-[1184px] mx-auto px-6 sm:px-8 py-8 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
+      <p>© 2027 Trail de Nuces · Comité des fêtes de Nuces</p>
+      <div className="flex flex-wrap gap-2">
+        <Link to="/contact" className="inline-flex items-center min-h-[44px] px-2 text-primary font-medium hover:opacity-80 transition">
+          Contact
+        </Link>
+        <Link to="/partenaires" className="inline-flex items-center min-h-[44px] px-2 text-primary font-medium hover:opacity-80 transition">
+          Partenaires
+        </Link>
+      </div>
+    </footer>
+  );
 }

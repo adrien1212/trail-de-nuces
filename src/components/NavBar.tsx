@@ -1,13 +1,13 @@
-import { Mountain, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { useState } from "react";
 
 const navLinks = [
-  { to: "/parcours", label: "Les parcours" },
+  { to: "/parcours", label: "Courses" },
   { to: "/randonnee", label: "Randonnée" },
   { to: "/resultats", label: "Résultats" },
-  { to: "/inscription", label: "Inscription" },
+  { to: "/partenaires", label: "Partenaires" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -21,17 +21,22 @@ export default function NavBar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between py-3 px-4">
-        <div className="flex items-center gap-2">
-          <Link to="/" className="flex items-center gap-2">
-            <Mountain className="h-6 w-6 text-primary" />
-            <span className="font-display text-2xl tracking-wider text-foreground">
-              TRAIL DE NUCES
-            </span>
-          </Link>
-        </div>
-        <div className="hidden md:flex items-center gap-8 font-body text-sm font-medium text-muted-foreground">
+        <Link to="/" className="flex items-center gap-2 min-h-[44px]">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 19 L9.5 7 L13.5 14 L16 10.5 L21 19 Z" />
+          </svg>
+          <span className="text-xl font-bold text-foreground">
+            Trail de Nuces
+          </span>
+        </Link>
+
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
-            <Link key={link.to} to={link.to} className="hover:text-foreground transition-colors">
+            <Link
+              key={link.to}
+              to={link.to}
+              className="inline-flex items-center min-h-[44px] px-3 text-foreground font-medium hover:text-primary transition-colors"
+            >
               {link.label}
             </Link>
           ))}
@@ -41,11 +46,17 @@ export default function NavBar() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-foreground transition-colors"
+              className="inline-flex items-center min-h-[44px] px-3 text-foreground font-medium hover:text-primary transition-colors"
             >
               {link.label}
             </a>
           ))}
+          <Link
+            to="/inscription"
+            className="inline-flex items-center min-h-[44px] px-4 ml-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm shadow-primary/15 hover:shadow-md hover:shadow-primary/25 hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+          >
+            S'inscrire
+          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -54,14 +65,14 @@ export default function NavBar() {
             <Menu className="h-6 w-6 text-foreground" />
           </SheetTrigger>
           <SheetContent side="right" className="w-64">
-            <SheetTitle className="font-display text-xl mb-6">Menu</SheetTitle>
-            <div className="flex flex-col gap-4 font-body text-base">
+            <SheetTitle className="text-xl font-bold mb-6">Menu</SheetTitle>
+            <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
                   onClick={() => setOpen(false)}
-                  className="text-foreground hover:text-primary transition-colors py-2"
+                  className="text-foreground font-medium hover:text-primary transition-colors py-3 px-2 rounded-md hover:bg-muted/50"
                 >
                   {link.label}
                 </Link>
@@ -73,11 +84,18 @@ export default function NavBar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="text-foreground hover:text-primary transition-colors py-2"
+                  className="text-foreground font-medium hover:text-primary transition-colors py-3 px-2 rounded-md hover:bg-muted/50"
                 >
                   {link.label}
                 </a>
               ))}
+              <Link
+                to="/inscription"
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center justify-center min-h-[44px] mt-4 px-4 bg-primary text-primary-foreground font-semibold rounded-lg"
+              >
+                S'inscrire
+              </Link>
             </div>
           </SheetContent>
         </Sheet>

@@ -32,13 +32,13 @@ const Resultats = () => {
       <main className="flex-1 pt-32 pb-24 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="font-body text-sm uppercase tracking-[0.3em] text-primary mb-3">
+            <p className="text-xs font-semibold tracking-[0.04em] uppercase text-primary opacity-80 mb-2">
               Classements
             </p>
-            <h1 className="font-display text-5xl md:text-7xl text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Résultats des courses
             </h1>
-            <p className="font-body text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Retrouvez le PDF de chaque course, consultez-le directement en ligne
               ou téléchargez-le en un clic.
             </p>
@@ -54,10 +54,10 @@ const Resultats = () => {
                 <div className="p-6 border-b border-border">
                   <div className="flex items-center justify-between gap-4">
                     <div>
-                      <p className="font-display text-3xl text-foreground">
+                      <p className="text-3xl font-bold text-foreground">
                         {resultat.title}
                       </p>
-                      <p className="font-body text-muted-foreground text-lg">
+                      <p className="text-muted-foreground text-lg">
                         {resultat.subtitle}
                       </p>
                     </div>
@@ -73,7 +73,7 @@ const Resultats = () => {
                       className="h-[480px] w-full"
                     >
                       <div className="flex h-[480px] items-center justify-center p-6 text-center">
-                        <p className="font-body text-muted-foreground">
+                        <p className="text-muted-foreground">
                           La prévisualisation PDF n&apos;est pas disponible sur ce navigateur.
                         </p>
                       </div>

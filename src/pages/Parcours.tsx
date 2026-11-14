@@ -59,10 +59,13 @@ const Parcours = () => {
 
       <main className="pt-32 pb-24 px-4">
         <div className="container mx-auto max-w-5xl">
-          <h1 className="font-display text-5xl md:text-7xl text-foreground text-center mb-4">
-            LES PARCOURS
+          <p className="text-xs font-semibold tracking-[0.04em] uppercase text-primary opacity-80 text-center mb-2">
+            Édition 2027
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
+            Les parcours
           </h1>
-          <p className="text-muted-foreground text-center text-lg mb-12 font-body max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-center text-lg mb-12 max-w-2xl mx-auto">
             Découvrez les tracés des 3 parcours du Trail de Nuces. Téléchargez les fichiers GPX pour repérer les itinéraires.
           </p>
 
@@ -72,7 +75,7 @@ const Parcours = () => {
           >
             <TabsList className="w-full grid grid-cols-3 mb-8 h-auto">
               {parcours.map((p) => (
-                <TabsTrigger key={p.id} value={p.id} className="font-display text-sm md:text-base py-3">
+                <TabsTrigger key={p.id} value={p.id} className="text-sm md:text-base font-semibold py-3">
                   {p.distance}
                 </TabsTrigger>
               ))}
@@ -97,17 +100,17 @@ const Parcours = () => {
                   </div>
                   <div className="p-8">
                     <div className="flex items-start justify-between mb-1">
-                      <h2 className="font-display text-3xl md:text-4xl text-foreground">
+                      <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                         {p.name}
                       </h2>
-                      <span className="font-display text-3xl md:text-3xl text-foreground">
+                      <span className="text-3xl font-bold text-foreground">
                         {p.price}€
                       </span>
                     </div>
 
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="font-display text-4xl md:text-5xl text-primary">{p.distance}</span>
-                      <span className="text-muted-foreground font-body border-l border-border pl-4">
+                      <span className="text-4xl md:text-5xl font-bold text-primary">{p.distance}</span>
+                      <span className="text-muted-foreground border-l border-border pl-4">
                         {p.elevation}
                       </span>
                     </div>
