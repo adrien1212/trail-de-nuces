@@ -103,9 +103,6 @@ const Index = () => {
           <h2 className="text-[32px] leading-[38px] font-bold text-foreground">
             Les courses
           </h2>
-          <p className="max-w-[420px] text-muted-foreground">
-            Choisis ta distance. Départ et arrivée au village de Nuces.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -122,7 +119,7 @@ const Index = () => {
             >
               <div className="flex flex-col items-start gap-4">
                 <span
-                  className={`px-3 py-1 text-[11px] font-semibold tracking-[0.06em] uppercase rounded-full ${
+                  className={`px-3 py-1 text-xs font-semibold tracking-[0.06em] uppercase rounded-full ${
                     course.featured
                       ? "bg-secondary text-primary"
                       : course.isRando
@@ -132,8 +129,13 @@ const Index = () => {
                 >
                   {course.tag}
                 </span>
-                <h3 className="text-[44px] sm:text-[56px] leading-none font-bold tracking-tight">
-                  {course.distance}
+                <h3 className="leading-none tracking-[-0.03em]">
+                  <span className="text-[44px] sm:text-[56px] font-bold">
+                    {course.distance.split(" ")[0]}
+                  </span>
+                  <span className="text-[28px] sm:text-[34px] font-medium ml-1 opacity-70">
+                    {course.distance.split(" ")[1]}
+                  </span>
                 </h3>
               </div>
 
@@ -154,20 +156,20 @@ const Index = () => {
                     }`}
                   >
                     <dt
-                      className={`text-[11px] font-semibold tracking-[0.06em] uppercase leading-6 ${
+                      className={`text-[11px] font-medium tracking-[0.06em] uppercase leading-6 ${
                         course.featured ? "text-primary-foreground/70" : "text-muted-foreground"
                       }`}
                     >
                       {item.label}
                     </dt>
-                    <dd className="font-semibold">{item.value}</dd>
+                    <dd className="font-semibold tabular-nums">{item.value}</dd>
                   </div>
                 ))}
               </dl>
 
               <Link
                 to={course.href}
-                className={`inline-flex items-center justify-center min-h-[48px] mt-auto px-4 font-semibold rounded-lg transition-all duration-200 active:scale-[0.98] ${
+                className={`inline-flex items-center justify-center min-h-[48px] mt-auto px-4 text-[15px] font-semibold rounded-lg transition-all duration-200 active:scale-[0.98] ${
                   course.featured
                     ? "bg-white text-primary hover:bg-white/90 shadow-sm"
                     : course.isRando
