@@ -202,12 +202,12 @@ const Index = () => {
               icon: Calendar,
               label: "Date",
               value: "Dimanche 25 avril 2027",
-              detail: "Retrait des dossards dès 8h30.",
+              detail: "Retrait des dossards dès 8h00.",
             },
             {
               icon: MapPin,
               label: "Lieu",
-              value: "Nuces, Valady",
+              value: "Nuces, 12330 Valady",
               detail: "Aveyron (12), Occitanie.",
             },
             {
