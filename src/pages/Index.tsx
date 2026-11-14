@@ -6,34 +6,37 @@ import NavBar from "@/components/NavBar";
 
 const courses = [
   {
-    tag: "Trail long",
+    tag: "Trail",
     distance: "17 km",
     elevation: "+500 m",
     depart: "10 h 00",
     price: "15 €",
-    featured: true,
     href: "/parcours",
     btnLabel: "S'inscrire au 17 km",
+    bg: "#4B2E6F",
+    lightText: true,
   },
   {
-    tag: "Trail court",
+    tag: "Trail",
     distance: "10 km",
     elevation: "+300 m",
     depart: "10 h 30",
     price: "12 €",
-    featured: false,
     href: "/parcours",
     btnLabel: "S'inscrire au 10 km",
+    bg: "#6B4A7A",
+    lightText: true,
   },
   {
-    tag: "Découverte",
+    tag: "Trail",
     distance: "5 km",
     elevation: "+100 m",
     depart: "11 h 00",
     price: "10 €",
-    featured: false,
     href: "/parcours",
     btnLabel: "S'inscrire au 5 km",
+    bg: "#8B6A5E",
+    lightText: true,
   },
   {
     tag: "Randonnée",
@@ -41,10 +44,11 @@ const courses = [
     elevation: "Marche, sans chrono",
     depart: "9 h 30",
     price: "5 €",
-    featured: false,
     isRando: true,
     href: "/randonnee",
     btnLabel: "S'inscrire à la rando",
+    bg: "#E8D8BE",
+    lightText: false,
   },
 ];
 
@@ -54,7 +58,7 @@ const Index = () => {
       <NavBar />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
         <img
           src={heroImage}
           alt="Sentiers de Nuces — coureurs sur les chemins du vallon"
@@ -65,7 +69,7 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
 
-        <div className="relative flex flex-col items-center gap-5 px-6 pb-16 pt-48 text-center animate-hero-enter">
+        <div className="relative flex flex-col items-start gap-5 px-6 sm:px-8 pb-16 pt-48 max-w-[1184px] mx-auto w-full animate-hero-enter">
           <h1
             className="text-[clamp(44px,6vw,80px)] leading-[1.05] font-bold tracking-[-0.02em] text-foreground"
             style={{ textShadow: "0 1px 24px hsl(41 52% 92% / 0.6)" }}
@@ -73,27 +77,32 @@ const Index = () => {
             Trail de Nuces 2027
           </h1>
           <p
-            className="max-w-[560px] text-xl leading-7 text-foreground/70"
+            className="text-xl leading-7 text-foreground/70 font-medium tracking-wide"
             style={{ textShadow: "0 1px 12px hsl(41 52% 92% / 0.5)" }}
           >
-            Dimanche 25 avril 2027 · Nuces, Aveyron.
-            <br className="hidden sm:block" />
-            Trois courses et une rando sur les chemins du vallon.
+            5 / 10 / 17 km · +rando
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mt-2">
+          <span className="inline-flex items-center gap-3 min-h-[60px] px-7 mt-2 bg-primary text-primary-foreground font-semibold text-xl rounded-xl">
+            <Calendar className="h-5 w-5" strokeWidth={1.5} />
+            Dimanche 25 avril 2027
+          </span>
+          <div className="flex gap-3">
             <Link
-              to="/inscription"
-              className="inline-flex items-center min-h-[48px] px-7 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+              to="/resultats"
+              className="inline-flex items-center min-h-[44px] px-5 bg-white/90 text-foreground font-semibold rounded-lg border border-border backdrop-blur-sm hover:bg-white active:bg-white/80 transition-all duration-200"
             >
-              S'inscrire
+              Résultats 2026
             </Link>
             <a
-              href="#courses"
-              className="inline-flex items-center min-h-[48px] px-7 bg-white/90 text-primary font-semibold rounded-lg border border-border backdrop-blur-sm hover:bg-white active:bg-white/80 transition-all duration-200"
+              href="https://photos.traildenuces.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center min-h-[44px] px-5 bg-white/90 text-foreground font-semibold rounded-lg border border-border backdrop-blur-sm hover:bg-white active:bg-white/80 transition-all duration-200"
             >
-              Voir les courses
+              Photos 2026
             </a>
           </div>
+
         </div>
       </section>
 
@@ -109,22 +118,19 @@ const Index = () => {
           {courses.map((course) => (
             <article
               key={course.distance}
+              style={{ backgroundColor: course.bg }}
               className={`flex flex-col gap-6 p-6 rounded-lg transition-all duration-200 hover:-translate-y-1 ${
-                course.featured
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/15 hover:shadow-xl hover:shadow-primary/25"
-                  : course.isRando
-                  ? "bg-accent hover:shadow-lg hover:shadow-foreground/5"
-                  : "bg-card border border-border hover:shadow-lg hover:shadow-foreground/5"
+                course.lightText
+                  ? "text-white shadow-lg hover:shadow-xl"
+                  : "hover:shadow-lg hover:shadow-foreground/5"
               }`}
             >
               <div className="flex flex-col items-start gap-4">
                 <span
                   className={`px-3 py-1 text-xs font-semibold tracking-[0.06em] uppercase rounded-full ${
-                    course.featured
-                      ? "bg-secondary text-primary"
-                      : course.isRando
-                      ? "bg-white text-primary"
-                      : "bg-secondary text-primary"
+                    course.lightText
+                      ? "bg-white/20 text-white"
+                      : "bg-primary text-primary-foreground"
                   }`}
                 >
                   {course.tag}
@@ -141,7 +147,7 @@ const Index = () => {
 
               <dl
                 className={`flex flex-col border-t ${
-                  course.featured ? "border-primary-foreground/20" : "border-border"
+                  course.lightText ? "border-white/15" : "border-foreground/10"
                 }`}
               >
                 {[
@@ -152,12 +158,12 @@ const Index = () => {
                   <div
                     key={item.label}
                     className={`flex justify-between gap-4 py-3 border-b ${
-                      course.featured ? "border-primary-foreground/20" : "border-border"
+                      course.lightText ? "border-white/15" : "border-foreground/10"
                     }`}
                   >
                     <dt
                       className={`text-[11px] font-medium tracking-[0.06em] uppercase leading-6 ${
-                        course.featured ? "text-primary-foreground/70" : "text-muted-foreground"
+                        course.lightText ? "text-white/60" : "text-muted-foreground"
                       }`}
                     >
                       {item.label}
@@ -170,10 +176,8 @@ const Index = () => {
               <Link
                 to={course.href}
                 className={`inline-flex items-center justify-center min-h-[48px] mt-auto px-4 text-[15px] font-semibold rounded-lg transition-all duration-200 active:scale-[0.98] ${
-                  course.featured
+                  course.lightText
                     ? "bg-white text-primary hover:bg-white/90 shadow-sm"
-                    : course.isRando
-                    ? "bg-white text-primary border border-border hover:bg-background shadow-sm"
                     : "bg-primary text-primary-foreground hover:shadow-md hover:shadow-primary/20"
                 }`}
               >
@@ -186,6 +190,12 @@ const Index = () => {
 
       {/* Infos pratiques */}
       <section id="infos" className="max-w-[1184px] mx-auto px-6 sm:px-8 pb-20">
+        <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+          <h2 className="text-[32px] leading-[38px] font-bold text-foreground">
+            Infos pratiques 
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 py-10 border-t border-b border-border">
           {[
             {
@@ -220,31 +230,33 @@ const Index = () => {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="max-w-[1184px] mx-auto px-6 sm:px-8 py-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
-          <div className="flex flex-col gap-3 max-w-[640px]">
-            <h2 className="text-[clamp(28px,4vw,48px)] leading-[1.1] font-bold">
-              Prends le départ à Nuces
-            </h2>
-            <p className="text-lg leading-7 text-primary-foreground/70">
-              17 km · 10 km · 5 km · Rando 9 km. Inscription en ligne.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
+      <section className="max-w-[1184px] mx-auto px-6 sm:px-8 pb-20">
+       <div className="bg-primary text-primary-foreground relative overflow-hidden rounded-2xl">
+        <div className="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-white/5 pointer-events-none" />
+        <div className="absolute left-1/3 -top-20 w-60 h-60 rounded-full bg-secondary/15 pointer-events-none" />
+        <div className="relative px-8 sm:px-12 py-16 flex flex-col gap-6">
+          <h2 className="text-[clamp(28px,4vw,48px)] leading-[1.1] font-bold tracking-tight">
+            Prends le départ à Nuces
+          </h2>
+          <p className="text-lg leading-7 text-primary-foreground/70 max-w-xl">
+            17 km · 10 km · 5 km · Rando 9 km. Inscription en ligne ouverte à tous.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 pt-1">
             <Link
               to="/inscription"
-              className="inline-flex items-center min-h-[48px] px-7 bg-white text-primary font-semibold rounded-lg shadow-lg shadow-black/10 hover:shadow-xl hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+              className="inline-flex items-center h-12 px-7 bg-white text-primary font-semibold rounded-lg shadow-sm hover:bg-secondary transition-colors"
             >
-              S'inscrire
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center min-h-[48px] px-7 text-primary-foreground font-semibold rounded-lg border border-primary-foreground/50 hover:bg-primary-foreground/10 active:bg-primary-foreground/5 transition-all duration-200"
-            >
-              Devenir bénévole
+              S'inscrire en ligne
             </Link>
           </div>
+          <div className="flex flex-wrap items-center gap-5 pt-1 text-primary-foreground/50 text-sm font-medium">
+            <span className="flex items-center gap-1.5">
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              Dotation locale pour chaque finisher
+            </span>
+          </div>
         </div>
+       </div>
       </section>
 
       <Footer />
