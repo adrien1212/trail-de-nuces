@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import PendingInscription from "./pages/PendingInscription";
 import Resultats2026 from "./pages/2026/Resultats2026";
 import Partenaires from "./pages/Partenaires";
+import Randonnee2026 from "./pages/2026/Randonnee2026";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/parcours" element={<Parcours />} />
           <Route path="/parcours-2026" element={<Parcours2026 />} />
           <Route path="/randonnee" element={<Randonnee />} />
+          <Route path="/randonnee-2026" element={<Randonnee2026 />} />
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pending" element={<PendingInscription />} />

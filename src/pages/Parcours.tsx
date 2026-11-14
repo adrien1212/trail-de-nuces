@@ -9,7 +9,7 @@ const Parcours = () => {
       <main className="pt-32 pb-24 px-4 flex-1">
         <div className="container mx-auto max-w-2xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-            Parcours
+            Parcours 2027
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed">
             Parcours en cours de création

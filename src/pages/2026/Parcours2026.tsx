@@ -59,9 +59,6 @@ const Parcours = () => {
 
       <main className="pt-32 pb-24 px-4">
         <div className="container mx-auto max-w-5xl">
-          <p className="text-xs font-semibold tracking-[0.04em] uppercase text-primary opacity-80 text-center mb-2">
-            Édition 2027
-          </p>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
             Les parcours
           </h1>
@@ -103,9 +100,6 @@ const Parcours = () => {
                       <h2 className="text-3xl md:text-4xl font-bold text-foreground">
                         {p.name}
                       </h2>
-                      <span className="text-3xl font-bold text-foreground">
-                        {p.price}€
-                      </span>
                     </div>
 
                     <div className="flex items-center gap-4 mb-4">
@@ -114,19 +108,6 @@ const Parcours = () => {
                         {p.elevation}
                       </span>
                     </div>
-                    {/* <p className="text-muted-foreground font-body mb-6">{p.description}</p> */}
-                    {<Button variant="outline" asChild>
-                      <a href={p.gpxUrl} download>
-                        <Download className="h-4 w-4 mr-2" />
-                        Télécharger le GPX
-                      </a>
-                    </Button>}
-                  </div>
-                  <div className="flex justify-center py-3">
-                    <InscriptionBtn />
-                  </div>
-                  <div className="flex justify-center py-6 text-1xl md:text-2xl">
-                    <p>Restauration sur place possible, à réserver lors de l’inscription</p>
                   </div>
                 </div>
 

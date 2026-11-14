@@ -12,6 +12,7 @@ const navLinks = [
 
 const edition2026 = [
   { to: "/parcours-2026", label: "Parcours 2026" },
+  { to: "/randonnee-2026", label: "Randonnée 2026" },
   { to: "/resultats-2026", label: "Résultats 2026" },
   { href: "https://photos.traildenuces.fr", label: "Photos 2026", external: true },
 ];
