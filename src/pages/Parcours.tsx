@@ -1,138 +1,19 @@
-import { Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import map17km from "@/assets/map-17km.png";
-import map10km from "@/assets/map-10km.png";
-import map5km from "@/assets/map-5km.png";
-import altiture17km from "@/assets/altitude-17km.png";
-import altiture10km from "@/assets/altitude-10km.png";
-import altiture5km from "@/assets/altitude-5km.png";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import InscriptionBtn from "@/components/InscriptionBtn";
-const parcours = [
-  {
-    id: "17km",
-    name: "La Grande Nuçoise (10h)",
-    distance: "17 km",
-    elevation: "500 D+",
-    description:
-      "Le défi pour les traileurs confirmés. Un parcours exigeant à travers les collines et vignobles de Marcillac avec des passages techniques et de beaux panoramas sur la vallée.",
-    map: map17km,
-    altitude: altiture17km,
-    gpxUrl: "17.gpx",
-    price: 15,
-    eventtarifId: 50319,
-  },
-  {
-    id: "10km",
-    name: "La Nuçoise (10h30)",
-    distance: "10 km",
-    elevation: "300 D+",
-    description:
-      "Un parcours intermédiaire idéal pour découvrir le trail en douceur. Des chemins variés entre vignes et forêts avec de beaux points de vue sur le vallon.",
-    map: map10km,
-    altitude: altiture10km,
-    gpxUrl: "10.gpx",
-    price: 12,
-    eventtarifId: 50318,
-  },
-  {
-    id: "5km",
-    name: "La Petite Nuçoise (11h)",
-    distance: "5 km",
-    elevation: "100 D+",
-    description:
-      "Accessible à tous, en famille ou entre amis. Un premier pas dans le monde du trail sur des sentiers faciles autour de Marcillac-Vallon.",
-    map: map5km,
-    altitude: altiture5km,
-    gpxUrl: "5.gpx",
-    price: 10,
-    eventtarifId: 50317,
-  },
-];
 
 const Parcours = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <NavBar />
 
-      <main className="pt-32 pb-24 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <p className="text-xs font-semibold tracking-[0.04em] uppercase text-primary opacity-80 text-center mb-2">
-            Édition 2027
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground text-center mb-4">
-            Les parcours
+      <main className="pt-32 pb-24 px-4 flex-1">
+        <div className="container mx-auto max-w-2xl text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+            Parcours
           </h1>
-          <p className="text-muted-foreground text-center text-lg mb-12 max-w-2xl mx-auto">
-            Découvrez les tracés des 3 parcours du Trail de Nuces. Téléchargez les fichiers GPX pour repérer les itinéraires.
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Parcours en cours de création
           </p>
-
-          <Tabs
-            defaultValue="17km"
-            className="w-full"
-          >
-            <TabsList className="w-full grid grid-cols-3 mb-8 h-auto">
-              {parcours.map((p) => (
-                <TabsTrigger key={p.id} value={p.id} className="text-sm md:text-base font-semibold py-3">
-                  {p.distance}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            {parcours.map((p) => (
-              <TabsContent key={p.id} value={p.id}>
-                <div className="bg-card rounded-lg border border-border overflow-hidden">
-                  <div className="w-full">
-                    <img
-                      src={p.map}
-                      alt={`Carte du parcours ${p.name}`}
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                  <div className="w-full">
-                    <img
-                      src={p.altitude}
-                      alt={`Altitude du parcours ${p.name}`}
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <div className="flex items-start justify-between mb-1">
-                      <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                        {p.name}
-                      </h2>
-                      <span className="text-3xl font-bold text-foreground">
-                        {p.price}€
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="text-4xl md:text-5xl font-bold text-primary">{p.distance}</span>
-                      <span className="text-muted-foreground border-l border-border pl-4">
-                        {p.elevation}
-                      </span>
-                    </div>
-                    {/* <p className="text-muted-foreground font-body mb-6">{p.description}</p> */}
-                    {<Button variant="outline" asChild>
-                      <a href={p.gpxUrl} download>
-                        <Download className="h-4 w-4 mr-2" />
-                        Télécharger le GPX
-                      </a>
-                    </Button>}
-                  </div>
-                  <div className="flex justify-center py-3">
-                    <InscriptionBtn />
-                  </div>
-                  <div className="flex justify-center py-6 text-1xl md:text-2xl">
-                    <p>Restauration sur place possible, à réserver lors de l’inscription</p>
-                  </div>
-                </div>
-
-              </TabsContent>
-            ))}
-          </Tabs>
         </div>
       </main>
 

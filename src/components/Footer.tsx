@@ -8,9 +8,6 @@ export default function Footer() {
         <Link to="/contact" className="inline-flex items-center min-h-[44px] px-2 text-primary font-medium hover:opacity-80 transition">
           Contact
         </Link>
-        <Link to="/partenaires" className="inline-flex items-center min-h-[44px] px-2 text-primary font-medium hover:opacity-80 transition">
-          Partenaires
-        </Link>
       </div>
     </footer>
   );

@@ -11,7 +11,7 @@ const courses = [
     elevation: "+500 m",
     depart: "10 h 00",
     price: "15 €",
-    href: "/parcours",
+    href: "/inscription",
     btnLabel: "S'inscrire au 17 km",
     bg: "#4B2E6F",
     lightText: true,
@@ -22,7 +22,7 @@ const courses = [
     elevation: "+300 m",
     depart: "10 h 30",
     price: "12 €",
-    href: "/parcours",
+    href: "/inscription",
     btnLabel: "S'inscrire au 10 km",
     bg: "#6B4A7A",
     lightText: true,
@@ -33,7 +33,7 @@ const courses = [
     elevation: "+100 m",
     depart: "11 h 00",
     price: "10 €",
-    href: "/parcours",
+    href: "/inscription",
     btnLabel: "S'inscrire au 5 km",
     bg: "#8B6A5E",
     lightText: true,
@@ -88,7 +88,7 @@ const Index = () => {
           </span>
           <div className="flex gap-3">
             <Link
-              to="/resultats"
+              to="/resultats-2026"
               className="inline-flex items-center min-h-[44px] px-5 bg-white/90 text-foreground font-semibold rounded-lg border border-border backdrop-blur-sm hover:bg-white active:bg-white/80 transition-all duration-200"
             >
               Résultats 2026
